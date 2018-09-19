@@ -64,9 +64,7 @@ SELECT SUM(budget) FROM departments;
 SELECT Department, COUNT(*)
   FROM Employees
   GROUP BY Department;
-SELECT Department, COUNT(*) > 2 ~~~~~~~
-  FROM Employees
-  GROUP BY Department;
+SELECT department FROM employees GROUP BY department HAVING count(*) > 2;
 SELECT * FROM departments ORDER BY budget DESC LIMIT 1 OFFSET 1;
 SELECT name, lastname FROM employees WHERE department IN (
     SELECT Code FROM departments ORDER BY budget ASC LIMIT 1);
